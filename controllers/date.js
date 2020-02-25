@@ -12,7 +12,8 @@ module.exports = {
     },
 
     /**
-     * 
+     * Loads the firstDate specified in the url, and if it is a valid date,
+     * adds it as the firstDate attribute in the request object.
      */
     load_start_day: (req, res, next) => {
         const firstDate = Date.parse(req.params.start_date);
