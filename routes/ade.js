@@ -5,6 +5,12 @@ module.exports = [
     {
         url: '/:resource/today',
         method: 'get',
-        func: [date_ctrl.today, ade.fetch]
-    }
+        func: [date_ctrl.today, date_ctrl.gen_next_day, ade.fetch]
+    },
+
+    {
+        url: '/:resource/date/:start_date',
+        method: 'get',
+        func: [date_ctrl.load_start_day, date_ctrl.gen_next_day, ade.fetch]
+    }    
 ];

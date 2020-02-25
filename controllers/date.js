@@ -1,14 +1,55 @@
 module.exports = {
 
+     /**
+     * Adds the firstDate attribute to the request object,
+     * firstDay being today's date as a string in the ISO format yyyy-mm-dd.
+     */
     today: (req, res, next) => {
         const now = new Date();
-        const today = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
-
-        console.log(today);
-        console.log(today + 1);
-        
-        req.firstDate = today;
-        req.lastDate = today + 1;
+        const firstDate = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
+        req.firstDate = firstDate;
         next();
     },
+
+    /**
+     * 
+     */
+    load_start_day: (req, res, next) => {
+        const firstDate = Date.parse(req.params.start_date);
+
+        if (isNaN(firstDate.valueOf())) {
+            throw {
+                status: 422,
+                message: 'invalid date request'
+            }
+        }
+
+        req.firstDate = req.params.start_date;
+        next();
+    },
+
+    /**
+     * Generates the lastDay attribute of the request, 
+     * lastDay being the next day to firstDate as a string in the ISO format yyyy-mm-dd,
+     * allowing to request the ical for the day firstDate.
+     */
+    gen_next_day: (req, res, next) => {
+
+        const firstDate = Date.parse(req.firstDate);
+
+        if (isNaN(firstDate.valueOf())) {
+            throw {
+                status: 422,
+                message: 'invalid date request'
+            }
+        }
+
+        const nextDay = new Date(firstDate);
+        nextDay.setDate(nextDay.getDate()+1);
+
+        const lastDate = `${nextDay.getFullYear()}-${nextDay.getMonth()+1}-${nextDay.getDate()}`;
+        req.lastDate = lastDate;
+        next();
+    },
+
 };
