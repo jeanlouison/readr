@@ -8,6 +8,7 @@ module.exports = {
         const now = new Date();
         const firstDate = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
         req.firstDate = firstDate;
+        req.lastDate = firstDate;
         next();
     },
 
@@ -26,6 +27,7 @@ module.exports = {
         }
 
         req.firstDate = req.params.start_date;
+        req.lastDate = req.params.start_date;;
         next();
     },
 
