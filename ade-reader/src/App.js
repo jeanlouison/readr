@@ -2,7 +2,6 @@ import React from 'react';
 
 import logo_unistra from './img/logo_unistra.svg'
 
-import './App.css';
 import './Home.css';
 
 function App() {
