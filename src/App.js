@@ -6,46 +6,46 @@ import './Home.css';
 
 function App() {
   return ( <>
-    <header class="d-flex flex-row">
-        <span class="logo">
+    <header className="d-flex flex-row">
+        <span className="logo">
             <h1>Readr</h1>
             <h2>pour ADE</h2>
         </span>
         <img src={logo_unistra} width="150vw" alt="Logo de l'Université de Strasbourg"/>
     </header>
 
-    <div class="d-flex flex-row">
+    <div className="d-flex flex-row">
         <input type="text" name="Entrer un code" placeholder="Ajouter un code" id="ui-add-code"/>
         <input type="submit" name="Ajouter un code" value="+" id="ui-btn-add-code"/>
     </div>
     <input type="button" value="S&eacute;lectionner une ressource" id="ui-select-code"/>
 
-    <div id="action-container" class="action-container">
+    <div id="action-container" className="action-container">
          Séléction de ressources
         <h3>Ressources locales</h3>
-        <div class="scrolling-wrapper">
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
+        <div className="scrolling-wrapper">
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
         </div>
 
         <h3>Ressources en ligne</h3>
-        <div class="scrolling-wrapper">
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
+        <div className="scrolling-wrapper">
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
+            <div className="card"><h2>Card</h2></div>
         </div>
 
         <h3>Ajouter un agenda</h3>
-        <div class="d-flex flex-row">
-            <i class="gg-info mr-2 my-auto"></i>
-            <span class="help">
+        <div className="d-flex flex-row">
+            <i className="gg-info mr-2 my-auto"></i>
+            <span className="help">
                 Pour ajouter votre agenda habituel, vous pouvez suivre 
                     <a href="https://adewebcons.unistra.fr/jsp/custom/modules/plannings/generateCalUrl.jsp">
                         ce lien
