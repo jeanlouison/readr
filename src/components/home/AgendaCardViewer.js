@@ -17,7 +17,7 @@ const AgendaCardViewer = () => {
                     ...cards, 
                     <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
                         <h2>{agenda.name}</h2>
-                        <h6>{agenda.code}</h6>
+                        <h6>{agenda.code.slice(0, agenda.name.length*2)+'...'}</h6>
                     </span>
                 ]);
             }
@@ -32,7 +32,7 @@ const AgendaCardViewer = () => {
                 agendas.map(agenda =>
                 <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
                     <h2>{agenda.name}</h2>
-                    <h6>{agenda.code}</h6>
+                    <h6>{agenda.code.slice(0, agenda.name.length*2)+'...'}</h6>
                 </span>
             ));
             setLoading(false);

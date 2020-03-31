@@ -4,7 +4,10 @@ import { add_agenda } from '../../api/agenda';
 
 const FormAgenda = () => {
 
-    let [agenda, setAgenda] = useState({});
+    let [agenda, setAgenda] = useState({
+        name: '',
+        code: ''
+    });
     let [error, setError] = useState('');
 
     const handleSubmit = (event) => {

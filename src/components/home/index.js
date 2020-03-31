@@ -20,11 +20,11 @@ const Home = () => {
         </header>
     
         <HashRouter>
-            
-
             <Switch>
                 <Route path="/add-agenda">
                     <Link to='/select-agenda'>S&eacute;lectionner une ressource</Link>
+                    <br />
+                    <span>ou</span>
                     <h2>Ajouter un agenda</h2>
                     <FormAgenda />  
                     <div className="d-flex flex-row bottom-0">
@@ -42,6 +42,8 @@ const Home = () => {
             
                 <Route path="/select-agenda">
                     <Link to='/add-agenda'>Ajouter un agenda</Link>
+                    <br />
+                    <span>ou</span>
                     <h2>Séléction de ressources</h2>
                     <AgendaCardViewer />
                 </Route>
