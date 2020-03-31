@@ -9,7 +9,8 @@ module.exports = (sequelize) => {
 
     Agenda.init({
         name: Sequelize.STRING,
-        code: Sequelize.STRING
+        code: Sequelize.STRING,
+        color: Sequelize.STRING
     }, {
         sequelize,
         modelName: 'Agenda'

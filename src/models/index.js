@@ -3,10 +3,17 @@ fs = require('fs'),
 Sequelize = require('sequelize');
 
 // create Sequelize instance
+// const sequelize = new Sequelize('readr', 'readr', 'readr', {
+// 	host: '192.168.1.59',
+// 	port: 3306,
+// 	dialect: 'mariadb',
+// 	dialectOptions: { decimalNumbers: true }
+// });
+
 const sequelize = new Sequelize('readr', 'readr', 'readr', {
-	host: '192.168.1.59',
+	host: 'localhost',
 	port: 3306,
-	dialect: 'mariadb',
+	dialect: 'mysql',
 	dialectOptions: { decimalNumbers: true }
 });
 

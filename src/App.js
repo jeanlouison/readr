@@ -1,60 +1,10 @@
 import React from 'react';
 
-import logo_unistra from './img/logo_unistra.svg'
-
-import './Home.css';
+import Home from './components/home/index';
 
 function App() {
   return ( <>
-    <header className="d-flex flex-row">
-        <span className="logo">
-            <h1>Readr</h1>
-            <h2>pour ADE</h2>
-        </span>
-        <img src={logo_unistra} width="150vw" alt="Logo de l'Université de Strasbourg"/>
-    </header>
-
-    <div className="d-flex flex-row">
-        <input type="text" name="Entrer un code" placeholder="Ajouter un code" id="ui-add-code"/>
-        <input type="submit" name="Ajouter un code" value="+" id="ui-btn-add-code"/>
-    </div>
-    <input type="button" value="S&eacute;lectionner une ressource" id="ui-select-code"/>
-
-    <div id="action-container" className="action-container">
-         Séléction de ressources
-        <h3>Ressources locales</h3>
-        <div className="scrolling-wrapper">
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-        </div>
-
-        <h3>Ressources en ligne</h3>
-        <div className="scrolling-wrapper">
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-            <div className="card"><h2>Card</h2></div>
-        </div>
-
-        <h3>Ajouter un agenda</h3>
-        <div className="d-flex flex-row">
-            <i className="gg-info mr-2 my-auto"></i>
-            <span className="help">
-                Pour ajouter votre agenda habituel, vous pouvez suivre 
-                    <a href="https://adewebcons.unistra.fr/jsp/custom/modules/plannings/generateCalUrl.jsp">
-                        ce lien
-                    </a>
-                     et copier l’adresse obtenue dans le champ ci dessus,
-                     depuis la zone de texte ou en appuyant sur le bouton “coller”.
-            </span>
-        </div>
-    </div>
+        <Home />
     </>);
 }
 
