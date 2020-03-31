@@ -9,7 +9,6 @@ const FormAgenda = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        localStorage.setItem(agenda.id, agenda);
         addAgenda(agenda)
         .then(() => {
             setAgenda({

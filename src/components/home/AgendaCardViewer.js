@@ -44,7 +44,6 @@ const AgendaCardViewer = () => {
     }, []);
 
     return <>
-        <h2>Séléction de ressources</h2>
         <h3>Ressources locales</h3>
         <div className="scrolling-wrapper">
             {offlineCards}
@@ -53,7 +52,7 @@ const AgendaCardViewer = () => {
         <h3>Ressources en ligne</h3>
         <div className="scrolling-wrapper">
         { loading ?
-            'Loading...' :
+            'Chargement...' :
             error ?
             'Error: ' + error :
             onlineCards }

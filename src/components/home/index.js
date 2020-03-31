@@ -25,7 +25,7 @@ const Home = () => {
             <Switch>
                 <Route path="/add-agenda">
                     <Link to='/select-agenda'>S&eacute;lectionner une ressource</Link>
-                    <h3>Ajouter un agenda</h3>
+                    <h2>Ajouter un agenda</h2>
                     <FormAgenda />  
                     <div className="d-flex flex-row bottom-0">
                         <i className="gg-info mr-2 my-auto"></i>
@@ -42,6 +42,7 @@ const Home = () => {
             
                 <Route path="/select-agenda">
                     <Link to='/add-agenda'>Ajouter un agenda</Link>
+                    <h2>Séléction de ressources</h2>
                     <AgendaCardViewer />
                 </Route>
                 <Route>
