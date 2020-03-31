@@ -15,7 +15,7 @@ const AgendaCardViewer = () => {
                 let agenda = JSON.parse(localStorage.getItem(key));
                 setOfflineCards((cards) => [
                     ...cards, 
-                    <span key={agenda.id} className="card" background-color={agenda.color}>
+                    <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
                         <h2>{agenda.name}</h2>
                         <h6>{agenda.code}</h6>
                     </span>
@@ -30,7 +30,7 @@ const AgendaCardViewer = () => {
         .then((agendas) => {
             setOnlineCards(
                 agendas.map(agenda =>
-                <span key={agenda.id} className="card" background-color={agenda.color}>
+                <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
                     <h2>{agenda.name}</h2>
                     <h6>{agenda.code}</h6>
                 </span>
