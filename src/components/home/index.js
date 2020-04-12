@@ -7,14 +7,15 @@ import AgendaCardViewer from './AgendaCardViewer';
 import logo_unistra from '../../img/logo_unistra.svg'
 
 import '../../Home.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
 
     return <>
-        <header className="d-flex flex-row">
-            <span className="logo">
-                <h1>Readr</h1>
-                <h2>pour ADE</h2>
+        <header className="d-flex justify-content-between mx-3">
+            <span className="d-flex flex-column my-0">
+                <h1 className="mb-0 mt-2">Readr</h1>
+                <h3>pour ADE</h3>
             </span>
             <img src={logo_unistra} width="150vw" alt="Logo de l'Université de Strasbourg"/>
         </header>

@@ -1,3 +1,6 @@
+header {
+    font-family: 'Fira Sans', sans-serif;
+}
 
 .scrolling-wrapper {
     display: flex;
@@ -9,3 +12,4 @@
 .card {
     flex: 0 0 auto;
 }
+
