@@ -58,16 +58,15 @@ const Home = () => {
                     <div className="d-flex flex-column content-card blue-shadow">
                         <h2>Ajouter un agenda</h2>
                         <FormAgenda className="mx-auto" />  
-                        <div>
-                        <i className="gg-info mr-2 my-auto"></i>
-                        <span className="help">
-                            Pour ajouter votre agenda habituel, vous pouvez suivre <a href="https://adewebcons.unistra.fr/jsp/custom/modules/plannings/generateCalUrl.jsp">
-                                    ce lien
-                                </a> et copier l’adresse obtenue dans le champ ci dessus,
-                                depuis la zone de texte ou en appuyant sur le bouton “coller”.
-                        </span>
+                        <div className="fixed-bottom pb-3 px-3">
+                            <i className="gg-info mb-2"></i>
+                            <span className="nunito-light">
+                                Pour ajouter votre agenda habituel, vous pouvez suivre 
+                                    <a href="https://adewebcons.unistra.fr/jsp/custom/modules/plannings/generateCalUrl.jsp"> ce lien
+                                    </a> et copier l’adresse obtenue dans le champ ci dessus,
+                                    depuis la zone de texte ou en appuyant sur le bouton “coller”.
+                            </span>
                         </div>
-                        
                     </div>
                 </div>
                 </div>
