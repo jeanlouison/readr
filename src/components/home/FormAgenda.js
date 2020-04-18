@@ -38,7 +38,7 @@ const FormAgenda = () => {
 
     const getRandomColor = () => `rgb(${Math.floor(Math.random() * (255 - 200) + 200)}, ${Math.floor(Math.random() * (255 - 200) + 200)}, ${Math.floor(Math.random() * (255 - 200) + 200)})`;
 
-    return <form className="d-flex flex-row" onSubmit={handleSubmit}>
+    return <form className="d-flex flex-row nunito-light" onSubmit={handleSubmit}>
         <input type="text" value={agenda.name} name="name" placeholder="Nom de l'agenda" id="ui-add-name" onChange={handleChange}/>
         <input type="text" value={agenda.code} name="code" placeholder="Ajouter un code" id="ui-add-code" onChange={handleChange}/>
         <button name="Ajouter un code" id="ui-btn-add-code">+</button>

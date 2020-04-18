@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { get_all_agendas } from '../../api/agenda';
 
+import '../../Home.css'
+
 const AgendaCardViewer = () => {
 
     let [onlineCards, setOnlineCards] = useState([]);
@@ -15,9 +17,17 @@ const AgendaCardViewer = () => {
                 let agenda = JSON.parse(localStorage.getItem(key));
                 setOfflineCards((cards) => [
                     ...cards, 
-                    <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
-                        <h2>{agenda.name}</h2>
-                        <h6>{agenda.code.slice(0, agenda.name.length*2)+'...'}</h6>
+                    <span key={agenda.id} className="agendacard" style={
+                        {
+                            backgroundColor: agenda.color,
+                            'box-shadow': '1px 5px 11px -5px ' + agenda.color
+                        }}>
+                        <h3>{agenda.name}</h3>
+                        <h6>{
+                            agenda.code.length < 9 ?
+                            agenda.code :
+                            agenda.code.slice(0, 9)+'...'
+                        }</h6>
                     </span>
                 ]);
             }
@@ -30,9 +40,17 @@ const AgendaCardViewer = () => {
         .then((agendas) => {
             setOnlineCards(
                 agendas.map(agenda =>
-                <span key={agenda.id} className="card" style={{backgroundColor: agenda.color}}>
-                    <h2>{agenda.name}</h2>
-                    <h6>{agenda.code.slice(0, agenda.name.length*2)+'...'}</h6>
+                    <span key={agenda.id} className="agendacard" style={
+                        {
+                            backgroundColor: agenda.color,
+                            'box-shadow': '1px 5px 11px -5px ' + agenda.color
+                        }}>
+                    <h3>{agenda.name}</h3>
+                    <h6>{
+                        agenda.code.length < 9 ?
+                        agenda.code :
+                        agenda.code.slice(0, 9)+'...'
+                    }</h6>
                 </span>
             ));
             setLoading(false);
@@ -44,12 +62,12 @@ const AgendaCardViewer = () => {
     }, []);
 
     return <>
-        <h3>Ressources locales</h3>
+        <h2>Ressources locales</h2>
         <div className="scrolling-wrapper">
             {offlineCards}
         </div>
 
-        <h3>Ressources en ligne</h3>
+        <h2>Ressources en ligne</h2>
         <div className="scrolling-wrapper">
         { loading ?
             'Chargement...' :
