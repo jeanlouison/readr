@@ -53,14 +53,14 @@ const Home = () => {
                 <Route path="/add-agenda">
                 <div className="d-flex flex-column">
                 <StyledLink className="blue-shadow mx-3 py-3 h4 text-center" to='/select-agenda'>S&eacute;lectionner une ressource</StyledLink>
-                <span className="nunito-light my-2 mx-auto">ou</span>
+                <span className="nunito-light h4 mt-2 mb-3 mx-auto">ou</span>
                 <div>
                     <div className="d-flex flex-column content-card blue-shadow">
                         <h2>Ajouter un agenda</h2>
                         <FormAgenda className="mx-auto" />  
                         <div className="fixed-bottom pb-3 px-3">
                             <i className="gg-info mb-2"></i>
-                            <span className="nunito-light">
+                            <span className="nunito-light text-justify">
                                 Pour ajouter votre agenda habituel, vous pouvez suivre 
                                     <a href="https://adewebcons.unistra.fr/jsp/custom/modules/plannings/generateCalUrl.jsp"> ce lien
                                     </a> et copier l’adresse obtenue dans le champ ci dessus,
@@ -75,7 +75,7 @@ const Home = () => {
                 <Route path="/select-agenda">
                     <div className="d-flex flex-column">
                         <StyledLink className="blue-shadow mx-3 py-3 h4 text-center" to='/add-agenda'>Ajouter un agenda</StyledLink>
-                        <span className="nunito-light my-2 mx-auto">ou</span>
+                        <span className="nunito-light h4 mt-2 mb-3 mx-auto">ou</span>
                         <div>
                         <div className="content-card blue-shadow ">
                             <AgendaCardViewer className="mx-auto" />
@@ -87,7 +87,7 @@ const Home = () => {
                 <Route path="/">
                     <div className="d-flex flex-column">
                         <StyledLink className="blue-shadow mx-3 py-3 h4 text-center" to='/add-agenda'>Ajouter un agenda</StyledLink>
-                        <span className="nunito-light my-2 mx-auto">ou</span>
+                        <span className="nunito-light h4 mt-2 mb-3 mx-auto">ou</span>
                         <StyledLink className="blue-shadow mx-3 py-3 h4 text-center" to='/select-agenda'>S&eacute;lectionner une ressource</StyledLink>
                     </div>
                     
