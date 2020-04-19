@@ -20,14 +20,10 @@ const AgendaCardViewer = () => {
                     <span key={agenda.id} className="agendacard" style={
                         {
                             backgroundColor: agenda.color,
-                            'box-shadow': '1px 5px 11px -5px ' + agenda.color
+                            boxShadow: '1px 5px 11px -5px ' + agenda.color
                         }}>
-                        <h3>{agenda.name}</h3>
-                        <h6>{
-                            agenda.code.length < 9 ?
-                            agenda.code :
-                            agenda.code.slice(0, 9)+'...'
-                        }</h6>
+                        <h3 className="text-truncate">{agenda.name}</h3>
+                        <h6 className="text-truncate">{agenda.code}</h6>
                     </span>
                 ]);
             }
@@ -43,14 +39,10 @@ const AgendaCardViewer = () => {
                     <span key={agenda.id} className="agendacard" style={
                         {
                             backgroundColor: agenda.color,
-                            'box-shadow': '1px 5px 11px -5px ' + agenda.color
+                            boxShadow: '1px 5px 11px -5px ' + agenda.color
                         }}>
-                    <h3>{agenda.name}</h3>
-                    <h6>{
-                        agenda.code.length < 9 ?
-                        agenda.code :
-                        agenda.code.slice(0, 9)+'...'
-                    }</h6>
+                    <h3 className="text-truncate">{agenda.name}</h3>
+                    <h6 className="text-truncate">{agenda.code}</h6>
                 </span>
             ));
             setLoading(false);

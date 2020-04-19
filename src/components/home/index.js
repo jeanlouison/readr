@@ -17,7 +17,7 @@ const Home = () => {
         padding: 10px;
         border-radius: 8px;
         color: white;
-        background-color: #3c78d8ff;
+        background-color: #3c78d8;
         text-decoration: none;
         font-family: 'Nunito', 'sans-serif';
         font-weight: 700;
@@ -57,7 +57,7 @@ const Home = () => {
                 <div>
                     <div className="d-flex flex-column content-card blue-shadow">
                         <h2>Ajouter un agenda</h2>
-                        <FormAgenda className="mx-auto" />  
+                        <FormAgenda />
                         <div className="fixed-bottom pb-3 px-3">
                             <i className="gg-info mb-2"></i>
                             <span className="nunito-light text-justify">
