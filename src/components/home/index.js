@@ -58,7 +58,7 @@ const Home = () => {
                     <div className="d-flex flex-column content-card blue-shadow">
                         <h2>Ajouter un agenda</h2>
                         <FormAgenda />
-                        <div className="pb-0 px-3">
+                        <div className="pt-5 px-3">
                             <i className="gg-info mb-2"></i>
                             <span className="nunito-light text-justify">
                                 Pour ajouter votre agenda habituel, vous pouvez suivre 
