@@ -7,18 +7,18 @@
 }
 
 .gg-math-plus {
-    margin-top: -1px;
+    margin-top: -2px;
     position: relative;
     transform: scale(var(--ggs,1));
-    width: 32px;
-    height: 6px
+    width: 16px;
+    height: 3px
 }
 
 .gg-math-plus::after {
     content: "";
     position: absolute;
-    width: 6px;
-    height: 32px;
-    top: -13px;
-    left: 13px
+    width: 3px;
+    height: 16px;
+    top: -7px;
+    left: 7px
 }

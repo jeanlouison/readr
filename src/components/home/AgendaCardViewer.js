@@ -56,15 +56,19 @@ const AgendaCardViewer = () => {
     return <>
         <h2>Ressources locales</h2>
         <div className="scrolling-wrapper">
-            {offlineCards}
+            {
+                offlineCards.length ?
+                offlineCards :
+                <span className="nunito-light">Vous n'avez pas encore d'agenda.</span>
+            }
         </div>
 
         <h2>Ressources en ligne</h2>
         <div className="scrolling-wrapper">
         { loading ?
-            'Chargement...' :
+            <span className="nunito-light">Chargement...</span> :
             error ?
-            'Error: ' + error :
+            <span className="nunito-light">Erreur: {+ error}</span> :
             onlineCards }
         </div>
     </>;
