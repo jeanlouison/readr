@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components';
 
 import { get_all_agendas } from '../../api/agenda';
 
@@ -11,20 +13,30 @@ const AgendaCardViewer = () => {
     let [loading, setLoading] = useState(true);
     let [error, setError] = useState('');
 
+    const Card = styled(Link)`
+        color: black;
+        text-decoration: none;
+
+        &:focus, &:hover, &:link, &:active {
+            text-decoration: none;
+            color: black;
+        }
+    `;
+
     useEffect(() => {
         for (const key in localStorage) {
 			if (localStorage.hasOwnProperty(key)) {
                 let agenda = JSON.parse(localStorage.getItem(key));
                 setOfflineCards((cards) => [
                     ...cards, 
-                    <span key={agenda.id} className="agendacard" style={
+                    <Card to={`/calendar/${agenda.code}`} key={agenda.id} className="agendacard" style={
                         {
                             backgroundColor: agenda.color,
                             boxShadow: '1px 5px 11px -5px ' + agenda.color
                         }}>
                         <h3 className="text-truncate">{agenda.name}</h3>
                         <h6 className="text-truncate">{agenda.code}</h6>
-                    </span>
+                    </Card>
                 ]);
             }
 		}
@@ -36,14 +48,14 @@ const AgendaCardViewer = () => {
         .then((agendas) => {
             setOnlineCards(
                 agendas.map(agenda =>
-                    <span key={agenda.id} className="agendacard" style={
+                    <Card to={`/calendar/${agenda.code}`} key={agenda.id} className="agendacard" style={
                         {
                             backgroundColor: agenda.color,
                             boxShadow: '1px 5px 11px -5px ' + agenda.color
                         }}>
                     <h3 className="text-truncate">{agenda.name}</h3>
                     <h6 className="text-truncate">{agenda.code}</h6>
-                </span>
+                </Card>
             ));
             setLoading(false);
         })
