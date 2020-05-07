@@ -14,9 +14,10 @@ const Calendar = () => {
 
     const now = new Date();
     let [ curDate, setCurDate ] = useState(
-        `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`
+        now.getFullYear() + '-'
+             + ('0' + (now.getMonth()+1)).slice(-2) + '-'
+             + ('0' + now.getDate()).slice(-2)
         );
-    curDate = '2020-03-04'
     let [ courses, setCourses ] = useState([{}]);
     const page = useRef(null);
 
@@ -27,12 +28,10 @@ const Calendar = () => {
 
     useSwipe(page, {
         onSwipeLeft: event => {
-            setCurDate(d => addToDate(d, 1));
-            console.log('left')
+            setCurDate(d => addToDate(d, -1));
         },
         onSwipeRight: event => {
-            setCurDate(d => addToDate(d, -1));
-            console.log('right')
+            setCurDate(d => addToDate(d, 1));
         }
     }, 20);
 
@@ -43,7 +42,11 @@ const Calendar = () => {
 };
 
 const addToDate = (date, days) => {
-    ((new Date(date)).getDate() + days).toString();
+    let d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return( d.getFullYear() + '-'
+             + ('0' + (d.getMonth()+1)).slice(-2) + '-'
+             + ('0' + d.getDate()).slice(-2) );
 }
 
 export default Calendar;
