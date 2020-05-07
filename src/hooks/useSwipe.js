@@ -20,10 +20,10 @@ const useSwipe = (ref, handlers, minDelta) => {
             const currentTouches = getCurrentTouches(event, event.changedTouches)
             setTouches(currentTouches);
 
-            if (Math.abs(currentTouches.deltaX < minDelta) && currentTouches.x < touches.x) {
+            if (Math.abs(currentTouches.deltaX > minDelta) && currentTouches.x > touches.x) {
                 setGesture('onSwipeLeft')
             }
-            else if (Math.abs(currentTouches.deltaX < minDelta) && currentTouches.x > touches.x) {
+            else if (Math.abs(currentTouches.deltaX < minDelta) && currentTouches.x < touches.x) {
                 setGesture('onSwipeRight');
             }
             else {

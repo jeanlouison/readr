@@ -16,7 +16,7 @@ const Calendar = () => {
     let [ curDate, setCurDate ] = useState(
         `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`
         );
-    // curDate = '2020-03-04'
+    curDate = '2020-03-04'
     let [ courses, setCourses ] = useState([{}]);
     const page = useRef(null);
 
@@ -27,17 +27,23 @@ const Calendar = () => {
 
     useSwipe(page, {
         onSwipeLeft: event => {
-            setCurDate('left');
+            setCurDate(d => addToDate(d, 1));
+            console.log('left')
         },
         onSwipeRight: event => {
-            setCurDate('right');
+            setCurDate(d => addToDate(d, -1));
+            console.log('right')
         }
-    }, 30);
+    }, 20);
 
     return <div ref={page}>
         <h1>{curDate}</h1>
-        {courses.map(c => <Card key={c.start} course={c} />)}
+        {courses.map(c => <Card key={JSON.stringify(c)} course={c} />)}
     </div>
 };
+
+const addToDate = (date, days) => {
+    ((new Date(date)).getDate() + days).toString();
+}
 
 export default Calendar;
