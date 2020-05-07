@@ -23,23 +23,27 @@ const AgendaCardViewer = () => {
         }
     `;
 
+    
+
     useEffect(() => {
-        for (const key in localStorage) {
-			if (localStorage.hasOwnProperty(key)) {
-                let agenda = JSON.parse(localStorage.getItem(key));
-                setOfflineCards((cards) => [
-                    ...cards, 
-                    <Card to={`/calendar/${agenda.code}`} key={agenda.id} className="agendacard" style={
-                        {
-                            backgroundColor: agenda.color,
-                            boxShadow: '1px 5px 11px -5px ' + agenda.color
-                        }}>
-                        <h3 className="text-truncate">{agenda.name}</h3>
-                        <h6 className="text-truncate">{agenda.code}</h6>
-                    </Card>
-                ]);
+        if (typeof window.localStorage !== 'undefined') {
+            for (const key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    let agenda = JSON.parse(localStorage.getItem(key));
+                    setOfflineCards((cards) => [
+                        ...cards, 
+                        <Card to={`/calendar/${agenda.code}`} key={agenda.id} className="agendacard" style={
+                            {
+                                backgroundColor: agenda.color,
+                                boxShadow: '1px 5px 11px -5px ' + agenda.color
+                            }}>
+                            <h3 className="text-truncate">{agenda.name}</h3>
+                            <h6 className="text-truncate">{agenda.code}</h6>
+                        </Card>
+                    ]);
+                }
             }
-		}
+        }
     }, []);
 
     useEffect(() => {
