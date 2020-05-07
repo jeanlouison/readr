@@ -40,7 +40,9 @@ const FormAgenda = () => {
         agenda.color = getRandomColor();
         return add_agenda(agenda)
         .then((a) => {
-            localStorage.setItem(a.id, JSON.stringify(a));
+            if (typeof window.localStorage !== 'undefined') {
+                localStorage.setItem(a.id, JSON.stringify(a));
+            }
         })
         .catch(err => setError(err.message));
     };
