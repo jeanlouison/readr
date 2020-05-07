@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import './card.css'
+import '../../style/card.css'
 
 const Card = (course) => {
   

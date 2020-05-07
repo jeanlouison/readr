@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { get_today, get_from_date } from '../../api/ade';
 
-import '../../Calendar.css'
+import '../../style/Calendar.css'
 
 const Calendar = () => {
 

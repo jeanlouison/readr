@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import logo_unistra from '../img/logo_unistra.svg';
-import '../Home.css';
+import '../../style/Home.css';
 
 const Header = () => {
 

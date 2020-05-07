@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { get_all_agendas } from '../../api/agenda';
 
-import '../../Home.css'
+import '../../style/Home.css'
 
 const AgendaCardViewer = () => {
 

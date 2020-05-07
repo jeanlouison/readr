@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { add_agenda } from '../../api/agenda';
 
-import './FormAgenda.css';
-import '../../math-plus.css';
+import '../../style/FormAgenda.css';
+import '../../style/math-plus.css';
 
 const FormAgenda = () => {
 
