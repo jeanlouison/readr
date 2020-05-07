@@ -26,7 +26,7 @@ const AgendaCardViewer = () => {
     
 
     useEffect(() => {
-        if (typeof window.localStorage !== 'undefined') {
+        try {
             for (const key in localStorage) {
                 if (localStorage.hasOwnProperty(key)) {
                     let agenda = JSON.parse(localStorage.getItem(key));
@@ -43,6 +43,9 @@ const AgendaCardViewer = () => {
                     ]);
                 }
             }
+        }
+        catch {
+            setError('Cookies are disabled, consider enabling them.')
         }
     }, []);
 

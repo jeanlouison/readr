@@ -40,8 +40,11 @@ const FormAgenda = () => {
         agenda.color = getRandomColor();
         return add_agenda(agenda)
         .then((a) => {
-            if (typeof window.localStorage !== 'undefined') {
+            try {
                 localStorage.setItem(a.id, JSON.stringify(a));
+            }
+            catch {
+                setError('Cookies are disabled, consider enabling them.')
             }
         })
         .catch(err => setError(err.message));
