@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { get_today, get_from_date } from '../../api/ade';
+import { get_today, get_by_date } from '../../api/ade';
 
-import '../../style/Calendar.css'
+import Card from './Card';
+
+import '../../style/Calendar.css';
 
 const Calendar = () => {
 
@@ -13,17 +15,17 @@ const Calendar = () => {
     let [ curDate, setCurDate ] = useState(
         `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`
         );
-    curDate = '2019-03-01'
-    let [ courses, setCourses ] = useState({});
+    curDate = '2020-03-04'
+    let [ courses, setCourses ] = useState([{}]);
 
     useEffect(() => {
-        get_today(group)
+        get_by_date(group, curDate)
         .then(c => setCourses(c))
     }, [])
 
     return <>
         <h1>{curDate}</h1>
-        <h2>{JSON.stringify(courses)}</h2>
+        {courses.map(c => <Card id={c.start} course={c} />)}
     </>
 };
 

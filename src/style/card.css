@@ -1,0 +1,13 @@
+.card {
+    font-family: 'Roboto Mono', monospace;
+    text-align: left;
+    margin: .6em;
+    margin-left: 2em;
+    margin-right: -5%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 0px #efefef;
+    border-radius: .2em;
+}

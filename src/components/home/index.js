@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import FormAgenda from './FormAgenda';
 import AgendaCardViewer from './AgendaCardViewer';
 
-import '../../Home.css'
-import '../../info.css'
+import '../../style/Home.css'
+import '../../style/info.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
