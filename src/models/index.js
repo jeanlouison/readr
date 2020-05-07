@@ -13,7 +13,7 @@ Sequelize = require('sequelize');
 const sequelize = new Sequelize('readr', 'readr', 'readr', {
 	host: 'localhost',
 	port: 3306,
-	dialect: 'mysql',
+	dialect: 'mariadb',
 	dialectOptions: { decimalNumbers: true }
 });
 
