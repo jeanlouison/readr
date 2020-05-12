@@ -2,20 +2,20 @@ const
 fs = require('fs'),
 Sequelize = require('sequelize');
 
-// create Sequelize instance
-// const sequelize = new Sequelize('readr', 'readr', 'readr', {
-// 	host: '192.168.1.59',
-// 	port: 3306,
-// 	dialect: 'mariadb',
-// 	dialectOptions: { decimalNumbers: true }
-// });
-
+//create Sequelize instance
 const sequelize = new Sequelize('readr', 'readr', 'readr', {
-	host: 'localhost',
-	port: 3306,
-	dialect: 'mariadb',
-	dialectOptions: { decimalNumbers: true }
+	host: '127.0.0.1',
+ 	port: 3306,
+ 	dialect: 'mariadb',
+ 	dialectOptions: { decimalNumbers: true }
 });
+
+//const sequelize = new Sequelize('readr', 'readr', 'readr', {
+//	host: 'localhost',
+//	port: 3306,
+//	dialect: 'mariadb',
+//	dialectOptions: { decimalNumbers: true }
+//});
 
 sequelize
 .authenticate()

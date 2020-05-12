@@ -53,6 +53,7 @@ const AgendaCardViewer = () => {
         setLoading(true);
         get_all_agendas()
         .then((agendas) => {
+		console.log(agendas);
             setOnlineCards(
                 agendas.map(agenda =>
                     <Card to={`/calendar/${agenda.code}`} key={agenda.id} className="agendacard" style={
